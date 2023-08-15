@@ -78,8 +78,7 @@ def transfer_learn(train, val, unfreeze_percentage, learning_rate):
         tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(64),
         tf.keras.layers.Dropout(0.3),
-        tf.keras.layers.Dense(NUM_CLASSES, activation='softmax')
-    ], )
+        tf.keras.layers.Dense(NUM_CLASSES, activation='softmax')], )
     model_with_transfer_learning.compile(
         optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate),
         loss='sparse_categorical_crossentropy',
